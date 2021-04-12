@@ -114,3 +114,62 @@ body {
 .logo {
     width: 150px;
 }
+
+.menu {
+    margin: 15% 0% 10% 0%;
+}
+
+
+/*MENU*/
+
+.menu-hover {
+    cursor: pointer;
+    margin: 5% 20% 5% 17%;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    color: #000000;
+}
+
+.menu-hover:hover {
+    transform: translate(30px, 0);
+    color: #FF0000;
+}
+
+.domanda {
+    margin: 0% 0% 5% 0%;
+    display: flex;
+    position: relative;
+}
+
+.testo-domanda {
+    width: 100%;
+}
+
+.freccia {
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 400;
+    align-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.riga {
+    border-top: 1px solid;
+}
+
+a {
+    font-family: 'Karla';
+    font-weight: bold;
+    font-size: 2.5em;
+    line-height: normal;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #FF0000;
+}
