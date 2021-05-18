@@ -1,3 +1,0 @@
-/*TRAINING*/ var tooltip_rosso_01 = d3.selectAll(".tooltip_rosso_01:not(.css)"); var HTML_rosso_01 = d3.select("div.tooltip_rosso_01.mouse"); var spicchio_rosso_01 = d3.select("svg").select(".rosso_01"); spicchio_rosso_01.on("mouseover", function() {
-tooltip_rosso_01.style("opacity", "1"); }) .on("mousemove", function() { HTML_rosso_01 .style("left", Math.max(0, d3.event.pageX - 150) + "px") .style("top", (d3.event.pageY + 20) + "px"); }) .on("mouseout", function() { return tooltip_rosso_01.style("opacity",
-"0"); });

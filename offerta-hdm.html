@@ -11,6 +11,27 @@
 <body>
 
     <style type="text/css">
+        @font-face {
+            font-family: 'maison_neuelight';
+            src: url('./fonts/maisonneue-light-webfont.woff2') format('woff2'), url('./fonts/maisonneue-light-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'maison_neuemedium';
+            src: url('./fonts/maisonneue-medium-webfont.woff2') format('woff2'), url('./fonts/maisonneue-medium-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'maison_neuebold';
+            src: url('./fonts/maisonneue-bold-webfont.woff2') format('woff2'), url('./fonts/maisonneue-bold-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
         .graph {
             margin: 100px auto;
             width: 800px;
@@ -20,7 +41,7 @@
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.5s;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'maison_neuelight';
             font-size: 13px;
             line-height: 1.5;
             background: #F9F9F9;
@@ -31,14 +52,14 @@
         }
         
         p {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'maison_neuelight';
             padding: 0;
             margin: 0;
         }
         
         .titolo {
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
+            font-family: 'maison_neuebold';
+            font-size: 16px;
             font-weight: 700;
             line-height: 1;
             padding-bottom: 8px;
