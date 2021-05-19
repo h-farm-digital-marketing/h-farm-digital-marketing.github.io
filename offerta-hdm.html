@@ -3,35 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Offerta HDM</title>
 </head>
 
 <body>
 
+    <!-- CSS -->
+
     <style type="text/css">
-        @font-face {
-            font-family: 'maison_neuelight';
-            src: url('./fonts/maisonneue-light-webfont.woff2') format('woff2'), url('./fonts/maisonneue-light-webfont.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'maison_neuemedium';
-            src: url('./fonts/maisonneue-medium-webfont.woff2') format('woff2'), url('./fonts/maisonneue-medium-webfont.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'maison_neuebold';
-            src: url('./fonts/maisonneue-bold-webfont.woff2') format('woff2'), url('./fonts/maisonneue-bold-webfont.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
         .graph {
             margin: 100px auto;
             width: 800px;
@@ -41,7 +20,7 @@
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.5s;
-            font-family: 'maison_neuelight';
+            font-family: 'Maison Neue', sans-serif;
             font-size: 13px;
             line-height: 1.5;
             background: #F9F9F9;
@@ -52,38 +31,84 @@
         }
         
         p {
-            font-family: 'maison_neuelight';
+            font-family: 'Maison Neue', sans-serif;
             padding: 0;
             margin: 0;
         }
         
         .titolo {
-            font-family: 'maison_neuebold';
+            font-family: 'Maison Neue', sans-serif;
             font-size: 16px;
             font-weight: 700;
             line-height: 1;
             padding-bottom: 8px;
-            letter-spacing: 0.5px;
         }
         
         g:hover+g.tooltip.css {
             opacity: 1;
         }
+        
+        .st0 {
+            fill: #17161A;
+        }
+        
+        .st1 {
+            fill: #FFFFFF;
+        }
+        
+        .st2 {
+            fill: #E3E4E3;
+        }
+        
+        .st3 {
+            fill: #1D1D1B;
+        }
+        
+        .st4 {
+            fill: #E42320;
+        }
+        
+        .st5 {
+            fill: #4F4E50;
+        }
+        
+        .st6 {
+            fill: none;
+            stroke: #504D4F;
+            stroke-linecap: round;
+        }
+        
+        .st7 {
+            fill: #504D4F;
+        }
+        
+        .st8 {
+            opacity: 0.5;
+        }
+        
+        .nero {
+            transition: opacity 0.5s;
+            transition-duration: 0.5s;
+        }
+        
+        .rosso {
+            transition: opacity 0.5s;
+            transition-duration: 0.5s;
+        }
+        
+        .grigio {
+            transition: opacity 0.5s;
+            transition-duration: 0.5s;
+        }
     </style>
+
+
+
+    <!-- SVG GRAFICO -->
 
     <div class="graph">
         <svg version="1.1" id="graph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 576 576" style="enable-background:new 0 0 576 576;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#17161A;}
-	.st1{fill:#FFFFFF;}
-	.st2{fill:#E3E4E3;}
-	.st3{fill:#1D1D1B;}
-	.st4{fill:#E42320;}
-	.st5{fill:#4F4E50;}
-	.st6{fill:none;stroke:#504D4F;stroke-linecap:round;}
-	.st7{fill:#504D4F;}
-	.st8{opacity:0.5;}
-</style>
+
 <g class="nero nero_05">
     <a href="https://www.h-dm.it/it/servizi/media-relation-ufficio-stampa/">
 	<path class="st0" d="M182.1,49c33.1-14.6,68.8-22.2,105-22.3V113c-24.1,0.1-47.9,5.2-69.9,14.9L182.1,49z"/>
@@ -1229,7 +1254,6 @@
 	</g>
 </g>
 
-
 	<g class="tooltip tooltip_rosso_01 mouse">
 	</g>
 
@@ -1266,6 +1290,9 @@
 	<g class="tooltip tooltip_grigio_05 mouse">
 	</g>
 	</svg>
+
+
+        <!-- TOOLTIPS -->
 
         <div class="mouse tooltip tooltip_rosso_01">
             <p class="titolo">Conversion Rate Optimization</p>
@@ -1353,15 +1380,67 @@
         </div>
     </div>
 
+    <!-- D3 TOOLTIP INTERACTION -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js"></script>
     <script>
+        /*ALL ROSSO*/
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
+
+        rosso.on("mouseover", function() {
+            nero.style("opacity", "0.3");
+            grigio.style("opacity", "0.3");
+        })
+
+        .on("mouseout", function() {
+            nero.style("opacity", "1");
+            grigio.style("opacity", "1");
+        });
+
+        /*ALL NERO*/
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
+
+        nero.on("mouseover", function() {
+            rosso.style("opacity", "0.3");
+            grigio.style("opacity", "0.3");
+        })
+
+        .on("mouseout", function() {
+            rosso.style("opacity", "1");
+            grigio.style("opacity", "1");
+        });
+
+        /*ALL GRIGIO*/
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
+
+        grigio.on("mouseover", function() {
+            nero.style("opacity", "0.3");
+            rosso.style("opacity", "0.3");
+        })
+
+        .on("mouseout", function() {
+            nero.style("opacity", "1");
+            rosso.style("opacity", "1");
+        });
+
         /*ROSSO 01*/
         var tooltip_rosso_01 = d3.selectAll(".tooltip_rosso_01:not(.css)");
         var HTML_rosso_01 = d3.select("div.tooltip_rosso_01.mouse");
         var spicchio_rosso_01 = d3.select("svg").select(".rosso_01");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_rosso_01.on("mouseover", function() {
                 tooltip_rosso_01.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                grigio.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_rosso_01
@@ -1369,16 +1448,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_rosso_01.style("opacity", "0");
+                tooltip_rosso_01.style("opacity", "0");
+                nero.style("opacity", "1");
+                grigio.style("opacity", "1");
             });
 
         /*ROSSO 02*/
         var tooltip_rosso_02 = d3.selectAll(".tooltip_rosso_02:not(.css)");
         var HTML_rosso_02 = d3.select("div.tooltip_rosso_02.mouse");
         var spicchio_rosso_02 = d3.select("svg").select(".rosso_02");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_rosso_02.on("mouseover", function() {
                 tooltip_rosso_02.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                grigio.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_rosso_02
@@ -1386,16 +1472,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_rosso_02.style("opacity", "0");
+                tooltip_rosso_02.style("opacity", "0");
+                nero.style("opacity", "1");
+                grigio.style("opacity", "1");
             });
 
         /*ROSSO 03*/
         var tooltip_rosso_03 = d3.selectAll(".tooltip_rosso_03:not(.css)");
         var HTML_rosso_03 = d3.select("div.tooltip_rosso_03.mouse");
         var spicchio_rosso_03 = d3.select("svg").select(".rosso_03");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_rosso_03.on("mouseover", function() {
                 tooltip_rosso_03.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                grigio.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_rosso_03
@@ -1403,7 +1496,9 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_rosso_03.style("opacity", "0");
+                tooltip_rosso_03.style("opacity", "0");
+                nero.style("opacity", "1");
+                grigio.style("opacity", "1");
             });
 
         /*ROSSO 04*/
@@ -1413,6 +1508,8 @@
 
         spicchio_rosso_04.on("mouseover", function() {
                 tooltip_rosso_04.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                grigio.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_rosso_04
@@ -1420,16 +1517,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_rosso_04.style("opacity", "0");
+                tooltip_rosso_04.style("opacity", "0");
+                nero.style("opacity", "1");
+                grigio.style("opacity", "1");
             });
 
         /*ROSSO 05*/
         var tooltip_rosso_05 = d3.selectAll(".tooltip_rosso_05:not(.css)");
         var HTML_rosso_05 = d3.select("div.tooltip_rosso_05.mouse");
         var spicchio_rosso_05 = d3.select("svg").select(".rosso_05");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_rosso_05.on("mouseover", function() {
                 tooltip_rosso_05.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                grigio.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_rosso_05
@@ -1437,16 +1541,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_rosso_05.style("opacity", "0");
+                tooltip_rosso_05.style("opacity", "0");
+                nero.style("opacity", "1");
+                grigio.style("opacity", "1");
             });
 
         /*GRIGIO 01*/
         var tooltip_grigio_01 = d3.selectAll(".tooltip_grigio_01:not(.css)");
         var HTML_grigio_01 = d3.select("div.tooltip_grigio_01.mouse");
         var spicchio_grigio_01 = d3.select("svg").select(".grigio_01");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_grigio_01.on("mouseover", function() {
                 tooltip_grigio_01.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_grigio_01
@@ -1454,16 +1565,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_grigio_01.style("opacity", "0");
+                tooltip_grigio_01.style("opacity", "0");
+                nero.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*GRIGIO 02*/
         var tooltip_grigio_02 = d3.selectAll(".tooltip_grigio_02:not(.css)");
         var HTML_grigio_02 = d3.select("div.tooltip_grigio_02.mouse");
         var spicchio_grigio_02 = d3.select("svg").select(".grigio_02");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_grigio_02.on("mouseover", function() {
                 tooltip_grigio_02.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_grigio_02
@@ -1471,16 +1589,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_grigio_02.style("opacity", "0");
+                tooltip_grigio_02.style("opacity", "0");
+                nero.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*GRIGIO 03*/
         var tooltip_grigio_03 = d3.selectAll(".tooltip_grigio_03:not(.css)");
         var HTML_grigio_03 = d3.select("div.tooltip_grigio_03.mouse");
         var spicchio_grigio_03 = d3.select("svg").select(".grigio_03");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_grigio_03.on("mouseover", function() {
                 tooltip_grigio_03.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_grigio_03
@@ -1488,16 +1613,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_grigio_03.style("opacity", "0");
+                tooltip_grigio_03.style("opacity", "0");
+                nero.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*GRIGIO 04*/
         var tooltip_grigio_04 = d3.selectAll(".tooltip_grigio_04:not(.css)");
         var HTML_grigio_04 = d3.select("div.tooltip_grigio_04.mouse");
         var spicchio_grigio_04 = d3.select("svg").select(".grigio_04");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_grigio_04.on("mouseover", function() {
                 tooltip_grigio_04.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_grigio_04
@@ -1505,16 +1637,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_grigio_04.style("opacity", "0");
+                tooltip_grigio_04.style("opacity", "0");
+                nero.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
-        /*GRIGIO 04*/
+        /*GRIGIO 05*/
         var tooltip_grigio_05 = d3.selectAll(".tooltip_grigio_05:not(.css)");
         var HTML_grigio_05 = d3.select("div.tooltip_grigio_05.mouse");
         var spicchio_grigio_05 = d3.select("svg").select(".grigio_05");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_grigio_05.on("mouseover", function() {
                 tooltip_grigio_05.style("opacity", "1");
+                nero.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_grigio_05
@@ -1522,16 +1661,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_grigio_05.style("opacity", "0");
+                tooltip_grigio_05.style("opacity", "0");
+                nero.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*NERO 01*/
         var tooltip_nero_01 = d3.selectAll(".tooltip_nero_01:not(.css)");
         var HTML_nero_01 = d3.select("div.tooltip_nero_01.mouse");
         var spicchio_nero_01 = d3.select("svg").select(".nero_01");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_nero_01.on("mouseover", function() {
                 tooltip_nero_01.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_nero_01
@@ -1539,16 +1685,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_nero_01.style("opacity", "0");
+                tooltip_nero_01.style("opacity", "0");
+                grigio.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*NERO 02*/
         var tooltip_nero_02 = d3.selectAll(".tooltip_nero_02:not(.css)");
         var HTML_nero_02 = d3.select("div.tooltip_nero_02.mouse");
         var spicchio_nero_02 = d3.select("svg").select(".nero_02");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_nero_02.on("mouseover", function() {
                 tooltip_nero_02.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_nero_02
@@ -1556,16 +1709,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_nero_02.style("opacity", "0");
+                tooltip_nero_02.style("opacity", "0");
+                grigio.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*NERO 03*/
         var tooltip_nero_03 = d3.selectAll(".tooltip_nero_03:not(.css)");
         var HTML_nero_03 = d3.select("div.tooltip_nero_03.mouse");
         var spicchio_nero_03 = d3.select("svg").select(".nero_03");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_nero_03.on("mouseover", function() {
                 tooltip_nero_03.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_nero_03
@@ -1573,16 +1733,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_nero_03.style("opacity", "0");
+                tooltip_nero_03.style("opacity", "0");
+                grigio.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*NERO 04*/
         var tooltip_nero_04 = d3.selectAll(".tooltip_nero_04:not(.css)");
         var HTML_nero_04 = d3.select("div.tooltip_nero_04.mouse");
         var spicchio_nero_04 = d3.select("svg").select(".nero_04");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_nero_04.on("mouseover", function() {
                 tooltip_nero_04.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_nero_04
@@ -1590,16 +1757,23 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_nero_04.style("opacity", "0");
+                tooltip_nero_04.style("opacity", "0");
+                grigio.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
         /*NERO 05*/
         var tooltip_nero_05 = d3.selectAll(".tooltip_nero_05:not(.css)");
         var HTML_nero_05 = d3.select("div.tooltip_nero_05.mouse");
         var spicchio_nero_05 = d3.select("svg").select(".nero_05");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_nero_05.on("mouseover", function() {
                 tooltip_nero_05.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_nero_05
@@ -1607,7 +1781,9 @@
                     .style("top", (d3.event.pageY + 20) + "px");
             })
             .on("mouseout", function() {
-                return tooltip_nero_05.style("opacity", "0");
+                tooltip_nero_05.style("opacity", "0");
+                grigio.style("opacity", "1");
+                rosso.style("opacity", "1");
             });
 
 
@@ -1615,9 +1791,14 @@
         var tooltip_tra = d3.selectAll(".tooltip_tra:not(.css)");
         var HTML_tra = d3.select("div.tooltip_tra.mouse");
         var spicchio_tra = d3.select("svg").select(".tra");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_tra.on("mouseover", function() {
                 tooltip_tra.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_tra
@@ -1632,9 +1813,14 @@
         var tooltip_mar = d3.selectAll(".tooltip_mar:not(.css)");
         var HTML_mar = d3.select("div.tooltip_mar.mouse");
         var spicchio_mar = d3.select("svg").select(".mar");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_mar.on("mouseover", function() {
                 tooltip_mar.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_mar
@@ -1649,9 +1835,14 @@
         var tooltip_sea = d3.selectAll(".tooltip_sea:not(.css)");
         var HTML_sea = d3.select("div.tooltip_sea.mouse");
         var spicchio_sea = d3.select("svg").select(".sea");
+        var nero = d3.select("svg").selectAll(".nero:not(.css)");
+        var grigio = d3.select("svg").selectAll(".grigio:not(.css)");
+        var rosso = d3.select("svg").selectAll(".rosso:not(.css)");
 
         spicchio_sea.on("mouseover", function() {
                 tooltip_sea.style("opacity", "1");
+                grigio.style("opacity", "0.3");
+                rosso.style("opacity", "0.3");
             })
             .on("mousemove", function() {
                 HTML_sea
@@ -1661,57 +1852,6 @@
             .on("mouseout", function() {
                 return tooltip_sea.style("opacity", "0");
             });
-    </script>
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".nero").css("opacity", "1");
-            $(".nero").css("transition-duration", "0.5s");
-            $(".grigio").css("opacity", "1");
-            $(".grigio").css("transition-duration", "0.5s");
-            $(".rosso").css("opacity", "1");
-            $(".rosso").css("transition-duration", "0.5s");
-        });
-
-
-        $(".nero").mouseenter(function() {
-            $(".grigio").css("opacity", "0.4");
-            $(".rosso").css("opacity", "0.4");
-        });
-
-
-        $(".nero").mouseleave(function() {
-            $(".grigio").css("opacity", "1");
-            $(".rosso").css("opacity", "1");
-        });
-
-        $(".rosso").mouseenter(function() {
-            $(".grigio").css("opacity", "0.4");
-            $(".nero").css("opacity", "0.4");
-            $(".tootlip-red").css("opacity", "1");
-        });
-
-
-        $(".rosso").mouseleave(function() {
-            $(".grigio").css("opacity", "1");
-            $(".nero").css("opacity", "1");
-        });
-
-        $(".grigio").mouseenter(function() {
-            $(".nero").css("opacity", "0.4");
-            $(".rosso").css("opacity", "0.4");
-        });
-
-
-        $(".grigio").mouseleave(function() {
-            $(".nero").css("opacity", "1");
-            $(".rosso").css("opacity", "1");
-        });
     </script>
 
 </body>
