@@ -12,9 +12,8 @@
 
     <style type="text/css">
         .hdm-offer-graph {
-            margin: 100px auto;
             width: 800px;
-            position: relative;
+            position: fixed;
         }
         
         .hdm-offer-tooltip {
@@ -103,7 +102,7 @@
         }
     </style>
 
-
+    <div class="vuoto"></div>
 
     <!-- SVG GRAFICO -->
 
@@ -1432,6 +1431,7 @@
         var hdmoffergrigio = d3.select(".hdm-offer-graph svg").selectAll(".hdm-offer-grigio:not(.css)");
         var hdmofferrosso = d3.select(".hdm-offer-graph svg").selectAll(".hdm-offer-rosso:not(.css)");
 
+
         spicchio_hdmofferrosso_01.on("mouseover", function() {
                 hdmoffertooltip_hdmofferrosso_01.style("opacity", "1");
                 hdmoffernero.style("opacity", "0.3");
@@ -1774,6 +1774,7 @@
                 HTML_hdmoffernero_05
                     .style("left", Math.max(0, d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY + 10) + "px");
+
             })
             .on("mouseout", function() {
                 hdmoffertooltip_hdmoffernero_05.style("opacity", "0");
