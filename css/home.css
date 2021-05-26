@@ -143,17 +143,30 @@ body {
     position: relative;
 }
 
-.testo-domanda {
+.testo-medium {
     width: 100%;
+    left: 150px;
+    position: relative;
 }
 
-.freccia {
+
+.testo-small-l {
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 400;
+    align-content: flex-start;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+.testo-small-r {
     font-family: 'Karla';
     font-size: 18px;
     font-weight: 400;
     align-content: flex-end;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     right: 0;
 }
 
