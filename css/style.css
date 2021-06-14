@@ -1,24 +1,10 @@
 body{
-background-color: #f5f5f5;
-margin: 3vh 2vw;
+background-color: #ffffff;
 
 }
 
 .tableauViz {
-    height: 94vh;
-    width: 96vw;
+    height: 100vh;
+    width: 100vw;
 
 }
-
-.tableauPlaceholder{
-    border-radius: 35px;
-    box-shadow:
-    0 2.8px 2.2px -51px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px -51px rgba(0, 0, 0, 0.028),
-    0 12.5px 9.9px -51px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.6px -51px rgba(0, 0, 0, 0.042),
-    0 41.8px 33px -51px rgba(0, 0, 0, 0.05),
-    0 100px 79px -51px rgba(0, 0, 0, 0.07)
-  ;
-}
-
