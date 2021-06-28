@@ -1,0 +1,92 @@
+body{
+    overflow: hidden;
+}
+
+.col, .row{
+}
+
+.line{
+    border-right: 1px solid;
+    max-width: 25%;
+}
+
+.dashboard-container{
+    height: 100vh;
+    border-right: 1px solid;
+
+}
+
+.viz{
+    margin: 0;
+    padding: 0;
+}
+
+.legenda{
+    margin: 150px 24px 0 48px;
+}
+
+.bottone{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    padding: 40px 0px;
+    height: 100%;
+    text-align: center;
+}
+
+.alluvial{
+    padding-top: 7vh;
+}
+
+@media (max-width: 1600px) {
+
+    .line{
+        max-width: 30%;
+    }
+  
+  }
+  
+  @media (max-width: 1400px) {
+
+    .line{
+        max-width: 35%;
+    }
+  
+  }
+  
+  @media (max-width: 1100px) {
+
+    .line{
+        max-width: 40%;
+    }
+  
+  }
+  
+
+  @media (max-width: 600px) {
+
+    body{
+        overflow:auto;
+    }
+
+    .legenda{
+        margin: 100px 24px 48px 24px;
+    }
+
+    .line{
+        max-width: 100%;
+        border-bottom: 1px solid;
+    }
+
+    .dashboard-container{
+        display: block;
+    }
+
+    .viz{
+        margin: 24px;
+        height: 50%!important;
+    }
+  
+  }
+  

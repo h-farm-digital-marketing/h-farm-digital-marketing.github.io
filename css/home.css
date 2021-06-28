@@ -26,11 +26,15 @@
 }
 
 .logo {
-  width: 150px;
+  width: 140px;
 }
 
 .menu-container {
   margin: 250px 0 0 0;
+}
+
+.ultima{
+  margin-bottom: 200px;
 }
 
 /*MENU*/
