@@ -16,6 +16,10 @@ body{
 
 }
 
+.viz{
+    padding: 24px;
+}
+
 .legenda{
     margin: 150px 24px 0 48px;
 }
