@@ -7,7 +7,7 @@ body{
 
 .line{
     border-right: 1px solid;
-    max-width: 25%;
+    max-width: 24%;
 }
 
 .dashboard-container{
@@ -17,11 +17,11 @@ body{
 }
 
 .viz{
-    padding: 24px;
+    padding: 0px;
 }
 
 .legenda{
-    margin: 150px 24px 48px 48px;
+    margin: 0px 24px 48px 48px;
 }
 
 .bottone{
@@ -34,14 +34,10 @@ body{
     text-align: center;
 }
 
-.alluvial{
-    padding-top: 7vh;
-}
-
 @media (max-width: 1600px) {
 
     .line{
-        max-width: 30%;
+        max-width: 28%;
     }
   
   }
@@ -49,7 +45,7 @@ body{
   @media (max-width: 1400px) {
 
     .line{
-        max-width: 35%;
+        max-width: 31%;
     }
   
   }
@@ -57,7 +53,7 @@ body{
   @media (max-width: 1100px) {
 
     .line{
-        max-width: 40%;
+        max-width: 35%;
     }
   
   }
