@@ -86,18 +86,6 @@ body{
         margin: 24px;
         height: 50%!important;
     }
-
-    .nav-right{
-        position: fixed;
-        top: 0;
-        margin-top: 24px;
-    }
-
-    .logo{
-        position: fixed;
-        top: 0;
-        margin-top: 24px;
-    }
   
   }
   
