@@ -20,6 +20,10 @@ body{
     padding: 0px;
 }
 
+.bars{
+    margin-top: -30px;
+}
+
 .legenda{
     margin: 0px 24px 48px 48px;
 }
@@ -66,7 +70,7 @@ body{
     }
 
     .legenda{
-        margin: 100px 24px 48px 24px;
+        margin: 80px 24px 48px 24px;
     }
 
     .line{
@@ -81,6 +85,18 @@ body{
     .viz{
         margin: 24px;
         height: 50%!important;
+    }
+
+    .nav-right{
+        position: fixed;
+        top: 0;
+        margin-top: 24px;
+    }
+
+    .logo{
+        position: fixed;
+        top: 0;
+        margin-top: 24px;
     }
   
   }
