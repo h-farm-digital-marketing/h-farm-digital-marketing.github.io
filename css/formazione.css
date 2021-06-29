@@ -13,7 +13,6 @@ body{
 .dashboard-container{
     height: 100vh;
     border-right: 1px solid;
-
 }
 
 .viz{
@@ -59,6 +58,15 @@ body{
     .line{
         max-width: 35%;
     }
+
+    .nav-right{
+        display: block;
+        text-align: right;
+    }
+
+    .nav-link{
+        padding-bottom: 10px;
+    }
   
   }
   
@@ -83,8 +91,21 @@ body{
     }
 
     .viz{
-        margin: 24px;
-        height: 50%!important;
+        margin: 24px 24px 100px 24px;
+    }
+
+    .nav-right, .logo{
+        position: fixed;
+        top: 24px;
+    }
+
+    .nav{
+        color:white;
+        background-color: white;
+    }
+
+    iframe{
+        height: 50vh!important;
     }
   
   }
